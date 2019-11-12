@@ -1,5 +1,9 @@
 Takayuki.Uchida Japan (contact@u-software.co.jp)
 
+(注意)本システムは暫くメンテしておりませんでした。
+　その間、ブラウザはセキュリティ強化がなされ、SSLIntercept機能などで本システムが発行するSSL証明書がセキュリティ要件を満たさなくなってしまったため、当該処理の改善が必要であることが分かっています。Chrome subject_alt_name 設定問題には対処していますが、それいこうkeyUsage や expireday にも制限が加わった模様で、現在調査、改善しております。
+
+
 This system has three challenges still. 
 First, we don't have URL category database. this system can't be SWG without URL category database.
 Next, we need testing and field verification. but we don't have enough resources.
