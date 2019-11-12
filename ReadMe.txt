@@ -1,8 +1,5 @@
 Takayuki.Uchida Japan (contact@u-software.co.jp)
 
-注意) Proxyが使うSSL代理証明書が古いため、起動後、SSL証明書を管理画面から入れ替える必要があります。
-　　　現在、最新のSSL証明書を盛り込んだ パッケージファイルを作成中です。
-
 This system has three challenges still. 
 First, we don't have URL category database. this system can't be SWG without URL category database.
 Next, we need testing and field verification. but we don't have enough resources.
