@@ -4,14 +4,12 @@ Takayuki.Uchida Japan (contact@u-software.co.jp)
 　その間、ブラウザはセキュリティ強化がなされ、SSLIntercept機能などで本システムが発行するSSL証明書がセキュリティ要件を満たさなくなってしまったため、当該処理の改善が必要であることが分かっています。Chrome subject_alt_name 設定問題には対処していますが、それいこうkeyUsage や expireday にも制限が加わった模様で、現在調査、改善しております。
  
  13 Nov : SSL証明書問題は上記の制限を改善したところ通信できるようになりました（まだUPしていない）
- 17 Nov : TLS1.3に対応すべく OpenSSLの利用販数をupdate する予定
+ 14 Nov : google.com .apple.com サイトへのアクセスの不具合は本システムがPINGフレームを送り過ぎていたことが原因でした。
+ 14 Nov : OpenSSL1.1.1d を使用することにしました。(旧1.0.2o)  1.1.1dはTLS1.3をサポートしていますが、内部処理では明示的して利用してはいません。
  
- ただし、xxxx.google.com / xxxx.apple.com がSSL Intercept すると通信以上となってしまう現象が発生しています。
- このシステムでは他のProxyが実現できていない HTTP/2, WebSocket , TLS1.2 通信を実現しているため、固有の問題かもしれません。
- IAC, ACL Host で .google.com .apple.com を部分一致にして SSL Intercept から除外すれば、問題なく動作することは確認できています。
+ 17th Nov までに対処販をリリースする予定です。
+ ご迷惑おかけしますが、もう少しお待ちください。
  
- 対処販 comming soon, until 30 Nov!
-
 
 This system has three challenges still. 
 First, we don't have URL category database. this system can't be SWG without URL category database.
