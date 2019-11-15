@@ -1,18 +1,16 @@
-Takayuki.Uchida Japan (contact@u-software.co.jp)
+＜お知らせ＞
+Revision 2 のブラウザ・セキュリティ強化による不具合はRevision 3 にて解消しました。(Nov 15th 2019) 
+過去版を使っていた場合には、SSL証明書キャッシュを削除する必要があります。管理画面のsystemから削除できます。
 
-(注意)本システムは暫くメンテしておりませんでした。
-　その間、ブラウザはセキュリティ強化がなされ、SSLIntercept機能などで本システムが発行するSSL証明書がセキュリティ要件を満たさなくなってしまったため、当該処理の改善が必要であることが分かっています。Chrome subject_alt_name 設定問題には対処していますが、それいこうkeyUsage や expireday にも制限が加わった模様で、現在調査、改善しております。
- 
- 13 Nov : SSL証明書問題は上記の制限を改善したところ通信できるようになりました（まだUPしていない）
- 14 Nov : google.com .apple.com サイトへのアクセスの不具合は本システムがPINGフレームを送り過ぎていたことが原因でした。
- 14 Nov : OpenSSL1.1.1d を使用することにしました。(旧1.0.2o)  1.1.1dはTLS1.3をサポートしていますが、内部処理では明示的して利用してはいません。
- 
- 17th Nov までに対処販をリリースする予定です。
- ご迷惑おかけしますが、もう少しお待ちください。
- 
 ＜動作上の注意＞
 このシステムは、下記の通りにインストールすればSWGとしては動作しますが、クライアント側でも作業が必要です。
 {install directory}/config/ssl_cert.crt をブラウザの信頼できる認証局に登録してください。そうでないとブラウザで証明書エラーで拒否されます。
+
+また、今版ではSSL証明書の期限を2年としました。本来であれば、内部で発行したSSL証明書の期限が切れた、再発行する処理を実装する必要があるのですが、現在はこれを実装しておりません。　次回のリリースの際に、これらの対応を実施する予定です。　また、発行した証明書はブラウザの表示機能からも参照できます。
+
+
+---------------------------------------------------
+Takayuki.Uchida Japan (contact@u-software.co.jp)
 
 This system has three challenges still. 
 First, we don't have URL category database. this system can't be SWG without URL category database.
@@ -22,7 +20,6 @@ so I'm finding new function that bring new value.
 
 So that I need collaborators to develop together and coordinators to deploy around the world as New value gateway.
 Please contact me!
-
 
 		Skipper 
 ---------------------------------------------------
@@ -36,7 +33,7 @@ Please contact me!
 <For Linux> 
 *) we need [openldap] pkg when installing this system!
 1. Install (Linux centos7)
-  rpm -ihv skipper-swg-0.99-R02.x86_64.rpm   (uninstall: rpm -e ...,  list: rpm -qa | grep skipper)
+  rpm -ihv skipper-swg-0.99-R03.x86_64.rpm   (uninstall: rpm -e ...,  list: rpm -qa | grep skipper)
       install to /usr/local/skipper/...
   systemctl start skipper | service skipper start
     - log: /usr/local/skipper/log/
@@ -45,7 +42,7 @@ Please contact me!
        do [ssl intercept] all web-request.
   or
 1. Install (Linux Ubuntu server)
-   dpkg -i skipper-swg_0.99.2_amd64.deb  (unilstall: dpkg --purge ...,  list: dpkg --list | grep skipper)
+   dpkg -i skipper-swg_0.99.3_amd64.deb  (unilstall: dpkg --purge ...,  list: dpkg --list | grep skipper)
       install to /usr/local/skipper/...
    service skipper start
 2. You should get license-key from mail: skipper.worldchallege@gmail.com.
