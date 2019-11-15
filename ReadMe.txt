@@ -10,6 +10,9 @@ Takayuki.Uchida Japan (contact@u-software.co.jp)
  17th Nov までに対処販をリリースする予定です。
  ご迷惑おかけしますが、もう少しお待ちください。
  
+＜動作上の注意＞
+このシステムは、下記の通りにインストールすればSWGとしては動作しますが、クライアント側でも作業が必要です。
+{install directory}/config/ssl_cert.crt をブラウザの信頼できる認証局に登録してください。そうでないとブラウザで証明書エラーで拒否されます。
 
 This system has three challenges still. 
 First, we don't have URL category database. this system can't be SWG without URL category database.
